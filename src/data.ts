@@ -1,7 +1,7 @@
 export const site = {
   name: "LIIKE",
   fullName: "Liikunta- ja Hyvinvointikeskus Liike Oy",
-  tagline: "Liikunnan iloa ja hyvää oloa Mäntässä",
+  tagline: "Ota askel lähemmäs itsesi voittoa",
   address: "Koneenhoitajankatu 6, 35800 Mänttä",
   email: "info@lhk-liike.fi",
   phone: "040 730 2621",
@@ -148,6 +148,111 @@ export const news = [
     date: "Helmikuu 2026",
   },
 ] as const
+
+export const reviews = {
+  rating: 4.5,
+  count: 13,
+  googleUrl:
+    "https://www.google.com/search?q=Liikunta-+ja+Hyvinvointikeskus+Liike+Oy+Arvostelut&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDA1MjYyNTcxMTWxMLQ0MDc3t9zAyPiK0cgnMzO7NK8kUVchK1HBo7IsM68sPzOvJDM7tTi7tFgBJJ2q4F-p4FhUll9ckppTWrKIlQxNACCK8MiFAAAA&rldimm=10523257445481907779&tbm=lcl&hl=fi-FI#lkt=LocalPoiReviews",
+  items: [
+    {
+      name: "Pirjo Kuulas",
+      rating: 5,
+      text: "Hienoa, että yrittäjä on jaksanut panostaa jo vuositolkulla yritykseensä täällä Mäntässä. Keksivät aina uusia ryhmäliikuntamuotoja. Siisti, hyvät laitteet ja ihana henkilökunta.",
+    },
+    {
+      name: "Eero Koskinen",
+      rating: 5,
+      text: "Monipuolinen ja tilava kuntosali. Myös ryhmäliikuntatunnit ovat loistavat. Henkilökunta rento ja ystävällinen, PT-palvelut mukaan lukien.",
+    },
+    {
+      name: "Leea Sultani",
+      rating: 5,
+      text: "Avulias henkilökunta, hyvät kuntosalivarusteet. Mahtava ilmapiiri ja hyvin tilaa vääntää.",
+    },
+    {
+      name: "Titta Viskari",
+      rating: 5,
+      text: "Viihtyisä sali, hyvät ryhmäliikuntatunnit.",
+    },
+    {
+      name: "Talliniemi Anja",
+      rating: 5,
+      text: "Hyvät mahdollisuudet harrastaa monipuolisesti liikuntaa.",
+    },
+    {
+      name: "T Silvan",
+      rating: 5,
+      text: "Hyvä mesta, loistotyypit.",
+    },
+  ],
+} as const
+
+export const ptCoaching = {
+  trainer: {
+    name: "Katariina",
+    fullName: "Katariina Karlsson",
+    email: "katariina@lhk-liike.fi",
+    phone: "040 730 2621",
+    instagram: "https://www.instagram.com/coachkatariina",
+    intro:
+      "Hei, olen Katariina, kolmen aktiivisen pojan äiti. Olen kannustava ja energinen ryhmäliikuntaohjaaja ja Personal Trainer. Liikunta on aina ollut intohimoni, ja olen iloinen, että olen pystynyt tekemään siitä itselleni myös ammatin.",
+    background:
+      "Liikuntaa olen harrastanut aina monipuolisesti. Juniorivuosina pelasin aktiivisesti jalkapalloa ja lumilautailin. Nykyään treenaan kuntoilumielessä edelleen kumpaakin. Lisäksi pelaan tennistä, ja uusimpina lajeina olen innostunut tankotanssista sekä CrossFitistä.",
+    style:
+      "Valmentajana olen määrätietoinen, kannustava ja tarvittaessa myös vaativa. Haluan kannustaa asiakkaitani mahdollisimman monipuoliseen kuntoiluun ja rohkeasti kokeilemaan ja kehittämään itseään.",
+  },
+  about:
+    "Valmennus voi olla henkilökohtaista tai ryhmässä tapahtuvaa. Suunnittelen harjoitusohjelman juuri sinun toiveidesi ja tarpeidesi mukaan ja hiomme yhdessä suoritustekniikat kuntoon. Tapaamisissa saat kaiken sen avun ja neuvon mitä tarvitset.",
+  includes: [
+    "Liikuntaneuvonta",
+    "Harjoitusohjelmat",
+    "Ravintoneuvonta",
+    "Yhteiset treenit",
+    "Kehonkoostumusmittaus tarvittaessa",
+  ],
+  goals:
+    "On tavoitteenasi sitten painonpudotus ja/tai lihasmassan kasvattaminen, yleinen hyvinvointi, virkeyden lisääminen tai ryhdin parantuminen – haluan, että tähän päädytään niin, että suoritustekniikkasi on kohdillaan kuten myös liikkuminen ja kehonhallintasi. Yhteisten treenien avulla tämä onnistuu!",
+  wellness: [
+    "Fyysinen aktiivisuus",
+    "Monipuolinen ja terveellinen ruokavalio",
+    "Riittävä lepo",
+    "Elämästä nauttiminen",
+  ],
+  closing:
+    "Kun sinulta löytyy motivaatio ja halu treenata ja saavuttaa tavoitteesi, niin minulta löytyy avaimet siihen! Onnistumme yhdessä!",
+  certifications: [
+    "Trainer 4 You Kuntosalivalmentaja",
+    "Trainer 4 You Personal Trainer",
+    "Trainer 4 You Kahvakuulakoulu",
+    "FAF Indoor Cycling instructor",
+    "FAF Muscle training",
+    "Spartan Gear Toiminnallisen harjoittelun ohjaajakoulutus",
+    "Les Mills Bodypump instructor",
+    "Les Mills Bodycombat instructor",
+    "Life Coaching – Life Coach Academy (opinnot kesken)",
+  ],
+  pricing: [
+    {
+      name: "1 × valmennus",
+      price: "89 €",
+      note: "Kesto 60 min",
+    },
+    {
+      name: "10 × valmennus",
+      price: "750 €",
+      note: "Yhden tapaamisen kesto 60 min. Ei sisällä ravinto-ohjeita.",
+    },
+    {
+      name: "Intensiivinen lähivalmennus",
+      price: "150 €/kk",
+      note: "1 × tapaaminen/kk (kesto 75 min), ohjelmat, ohjelmoinnin muutokset, ravinto-ohjeet, Syke-treeniappi ja yhteydenpito.",
+      featured: true,
+    },
+  ],
+  pricingNote:
+    "Kysy lisää – voidaan myös räätälöidä näiden välistä sinulle sopiva vaihtoehto. Etävalmennuskin on mahdollinen. Hinnasto päivitetty 1.2.2024.",
+} as const
 
 export const pricing = {
   accessCard: 30,

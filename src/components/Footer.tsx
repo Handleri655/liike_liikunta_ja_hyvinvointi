@@ -37,8 +37,18 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link className="hover:text-lime" to="/pt-valmennus">
+                PT-valmennus
+              </Link>
+            </li>
+            <li>
               <Link className="hover:text-lime" to="/hinnasto">
                 Hinnasto
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-lime" to="/ajankohtaista">
+                Ajankohtaista
               </Link>
             </li>
             <li>

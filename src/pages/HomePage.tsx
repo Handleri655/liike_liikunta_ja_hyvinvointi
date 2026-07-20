@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Button } from "../components/Button"
 import { Reveal } from "../components/Reveal"
-import { news, pricing, services, site } from "../data"
+import { news, pricing, reviews, services, site } from "../data"
 
 const heroImage =
   "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=2400&q=80"
@@ -32,11 +32,11 @@ export function HomePage() {
             {site.name}
           </p>
           <h1 className="mt-3 max-w-xl font-display text-2xl font-bold leading-tight text-balance sm:text-3xl md:text-[2.15rem]">
-            Liikunta- ja hyvinvointikeskus Mäntässä
+            {site.tagline}
           </h1>
           <p className="mt-3 max-w-md text-base text-cream/75 sm:text-lg">
-            Kuntosali, ryhmäliikunta ja valmennus – sinulle sopivalla tahdilla, joka päivä klo
-            04.30–24.00.
+            Liikunta- ja hyvinvointikeskus Mäntässä – kuntosali, ryhmäliikunta ja valmennus joka
+            päivä klo 04.30–24.00.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button to="/hinnasto">Tutustu hinnastoon</Button>
@@ -245,6 +245,64 @@ export function HomePage() {
                 </article>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ink py-20 text-cream lg:py-28">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.4fr] lg:items-end lg:gap-16">
+            <Reveal>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-lime">
+                Google-arvostelut
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
+                Mitä asiakkaat sanovat
+              </h2>
+              <div className="mt-6 flex items-end gap-3">
+                <p className="font-display text-6xl font-extrabold tracking-tight text-lime">
+                  {reviews.rating.toFixed(1).replace(".", ",")}
+                </p>
+                <div className="pb-2">
+                  <div className="flex gap-0.5 text-lime" aria-hidden>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i} className="text-lg">
+                        {i < Math.round(reviews.rating) ? "★" : "☆"}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-1 text-sm text-cream/60">
+                    {reviews.count} arvostelua Googlella
+                  </p>
+                </div>
+              </div>
+              <a
+                href={reviews.googleUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex text-sm font-semibold text-lime transition hover:text-white"
+              >
+                Lue kaikki arvostelut Googlella →
+              </a>
+            </Reveal>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              {reviews.items.slice(0, 4).map((review, i) => (
+                <Reveal key={review.name} delay={i * 70}>
+                  <blockquote className="border-l-2 border-lime pl-5">
+                    <div className="flex gap-0.5 text-lime" aria-label={`${review.rating} tähteä`}>
+                      {Array.from({ length: review.rating }).map((_, s) => (
+                        <span key={s}>★</span>
+                      ))}
+                    </div>
+                    <p className="mt-3 text-cream/80 leading-relaxed">“{review.text}”</p>
+                    <footer className="mt-4 text-sm font-semibold text-cream/55">
+                      {review.name}
+                    </footer>
+                  </blockquote>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

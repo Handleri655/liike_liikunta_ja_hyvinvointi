@@ -118,12 +118,25 @@ export function ServicesPage() {
                     ))}
                   </ul>
                   <div className="mt-8 flex flex-wrap gap-3">
-                    <Button to="/hinnasto" variant="dark">
-                      Katso hinnasto
-                    </Button>
-                    <Button to="/yhteystiedot" variant="primary">
-                      Kysy lisää
-                    </Button>
+                    {service.id === "valmennus" ? (
+                      <>
+                        <Button to="/pt-valmennus" variant="dark">
+                          Lue lisää PT-valmennuksesta
+                        </Button>
+                        <Button to="/yhteystiedot" variant="primary">
+                          Kysy lisää
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button to="/hinnasto" variant="dark">
+                          Katso hinnasto
+                        </Button>
+                        <Button to="/yhteystiedot" variant="primary">
+                          Kysy lisää
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </Reveal>
               </div>
