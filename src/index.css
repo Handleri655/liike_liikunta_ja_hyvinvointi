@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Figtree", system-ui, sans-serif;
+
+  --color-ink: #0c1210;
+  --color-ink-soft: #1a2420;
+  --color-lime: #c8f531;
+  --color-lime-dim: #9bc41f;
+  --color-forest: #1f3d2c;
+  --color-mist: #e9f0ea;
+  --color-cream: #f4f7f2;
+  --color-muted: #4d5c54;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 120;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease both;
+  }
+
+  .animate-ken-burns {
+    animation: ken-burns 18s ease-out forwards;
+  }
+
+  .logo-arc {
+    stroke-dasharray: 120;
+    animation: draw-line 1.2s ease forwards;
+  }
+
+  .delay-1 {
+    animation-delay: 0.12s;
+  }
+  .delay-2 {
+    animation-delay: 0.24s;
+  }
+  .delay-3 {
+    animation-delay: 0.36s;
+  }
+  .delay-4 {
+    animation-delay: 0.48s;
+  }
+}
